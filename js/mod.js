@@ -13,11 +13,14 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.6",
-	name: "Inflation Complete (can there be any thing lower than alpha)",
+	num: "0.7",
+	name: "The End (can there be any thing lower than alpha)",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
+	<h3>v0.7 The End</h3><br>
+		-added the ability to complete the game
+	<br>
 	<h3>v0.6 Inflation Complete</h3><br>
 		-added lots more upgrades
 	<h3>v0.5 World of colo(u)r</3h><br>
@@ -35,7 +38,7 @@ let changelog = `<h1>Changelog:</h1><br>
 	<h3>v0.1</h3><br>
 		-i made the thing`
 
-let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
+let winText = `Woo you did it you finnished the bored tree. (you prob just pressed this cuz i havent yet added unlocking stuff) if you are still bored then press play again if not uhh see my other stuff <a href="/">here<a>`
 
 // If you add new functions anywhere inside of a layer, and those functions have an effect when called, add them here.
 // (The ones here are examples, all official functions are already taken care of)
@@ -78,7 +81,7 @@ var displayThings = [
 
 // Determines when the game "ends"
 function isEndgame() {
-	return player.points.gte(new Decimal("e280000000"))
+	return (hasUpgrade('b2',21))
 }
 
 

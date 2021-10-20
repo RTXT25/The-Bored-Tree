@@ -1,34 +1,3 @@
-addLayer("l", {
-    name: "lore", // This is optional, only used in a few places, If absent it just uses the layer id.
-    symbol: "L", // This appears on the layer's node. Default is the id with the first letter capitalized
-    position: "side", // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
-    startData() { return {
-        unlocked: true,
-		points: new Decimal(0),
-    }},
-    color: "#fff700",
-    requires: new Decimal(10), // Can be a function that takes requirement increases into account
-    resource: "", // Name of prestige currency
-    baseResource: "", // Name of resource prestige is based on
-    baseAmount() {return player.points}, // Get the current amount of baseResource
-    type: "none", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.5, // Prestige currency exponent
-    gainMult() { // Calculate the multiplier for main currency from bonuses
-        mult = new Decimal(1)
-        return mult
-    },
-    gainExp() { // Calculate the exponent on main currency from bonuses
-        return new Decimal(1)
-    },
-    row: "side", // Row the layer is in on the tree (0 is the first row)
-    layerShown(){return true},
-    infoboxes : {
-        lore :{
-        title: "The Begining",
-        body() { return "You are Bored <br> So you play a game with the word bored in the title" },
-        },
-    },
-})
 addLayer("ac", {
     name: "Achivements", // This is optional, only used in a few places, If absent it just uses the layer id.
     symbol: "A", // This appears on the layer's node. Default is the id with the first letter capitalized
@@ -82,6 +51,12 @@ addLayer("b", {
         {key: "b", description: "b: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
+    infoboxes : {
+        loreB :{
+            title: "The Begining",
+            body() { return "You are Bored <br> So you play a game with the word bored in the title" },
+        },
+    },
     upgrades :{
         11:{
             title : "bored",
@@ -132,6 +107,11 @@ addLayer("b", {
             description : "boost Boredom by Boredom",
             cost : new Decimal(100)
         },
+        24:{
+            title :"inflation is to OP (DUH)",
+            description : "just make it a 10x multiplier",
+            cost: new Decimal(1e100)
+        },
     },
     branches:['h','d']
 })
@@ -159,6 +139,12 @@ addLayer("h", {
     },
     row: "1", // Row the layer is in on the tree (0 is the first row)
     layerShown(){return true},
+    infoboxes : {
+        loreH :{
+            title: "Hypixel",
+            body() { return "You are Bored <br> So you play some Minecraft on the Hypixel network" },
+            },
+    },
     branches: ['p','t']
 })
 addLayer("d", {
@@ -185,6 +171,12 @@ addLayer("d", {
     },
     row: "1", // Row the layer is in on the tree (0 is the first row)
     layerShown(){return true},
+    infoboxes : {
+        loreD :{
+            title: "Drawing",
+            body() { return "You are Bored <br> So you decide to draw stuff" },
+            },
+    },
     branches: ['g','s']
 })
 addLayer("p", {
@@ -496,4 +488,29 @@ addLayer("b2", {
     },
     row: "6", // Row the layer is in on the tree (0 is the first row)
     layerShown(){return true},
+    upgrades :{
+        11:{
+         title : "bored",
+            description : "gain more points",
+            cost : new Decimal(1),
+        },
+        12:{
+            title : "the same upgrade",
+            description : "the same upgrade as the last one how boring",
+            cost: new Decimal(1),
+        },
+        13:{
+            title : "stop giving me the same upgrade",
+            description : "OK this costs more",
+           cost : new Decimal(5)
+        },
+        21:{
+            title :"The End",
+            description : "finish the game",
+        },
+        31:{
+            title: "show stuff",
+            description : "show all previous layers",
+        },
+    },
 })
