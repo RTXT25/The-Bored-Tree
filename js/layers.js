@@ -71,6 +71,7 @@ addLayer("b", {
     exponent: 0.5, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
+        if (hasUpgrade('b', 23)) mult = mult.times(player[this.layer].points+1)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -102,10 +103,34 @@ addLayer("b", {
             description : "the last one I promise",
             cost : new Decimal(10)
         },
-        14:{
+        15:{
             title : "I lied",
             description : "this is the last one",
             cost : new Decimal(20)
+        },
+        16:{
+            title : "multiply by 4x",
+            description : "it is not the same",
+            cost : new Decimal(30)
+        },
+        17:{
+            title : "be more bored",
+            description : "double bored",
+            cost : new Decimal(40)
+        },
+        21:{
+            title : "useless upgrade",
+            description : "it does nothing"
+        },
+        22:{
+            title : "nice",
+            description : "boost by 69",
+            cost : new Decimal(69)
+        },
+        23:{
+            title : "inflation",
+            description : "boost Boredom by Boredom",
+            cost : new Decimal(100)
         },
     },
     branches:['h','d']

@@ -13,11 +13,13 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.5",
-	name: "world of colo(u)r (can there be any thing lower than alpha)",
+	num: "0.6",
+	name: "Inflation Complete (can there be any thing lower than alpha)",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
+	<h3>v0.6 Inflation Complete</h3><br>
+		-added lots more upgrades
 	<h3>v0.5 World of colo(u)r</3h><br>
 		-added colo(u)r
 	<br>	
@@ -60,6 +62,9 @@ function getPointGen() {
 		if (hasUpgrade('b', 13)) gain = gain.times(2)
 		if (hasUpgrade('b', 14)) gain = gain.times(2)
 		if (hasUpgrade('b', 15)) gain = gain.times(2)
+		if (hasUpgrade('b',16)) gain = gain.times(2)
+		if (hasUpgrade('b',17)) gain = gain.times(2)
+		if (hasUpgrade('b',22)) gain = gain.times(69)
 	return gain
 }
 
