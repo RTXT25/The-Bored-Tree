@@ -23,6 +23,7 @@ let changelog = `<h1>Changelog:</h1><br>
 	<br>
 	<h3>v0.6 Inflation Complete</h3><br>
 		-added lots more upgrades
+	<br>	
 	<h3>v0.5 World of colo(u)r</3h><br>
 		-added colo(u)r
 	<br>	
