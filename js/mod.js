@@ -13,19 +13,22 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.2",
-	name: "stuff",
+	num: "0.4",
+	name: "BRANCHES!!!(can there be any thing lower than alpha)",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
+	<h3>v0.4</h3><br>
+		-added branches
+	<br>
 	<h3>v0.3</h3><br>
-	added all the nodes
+		-added all the layers
 	<br>
 	<h3>v0.2</h3><br>
-	added 4 boredom upgrades
+		-added 4 boredom upgrades
 	<br>
 	<h3>v0.1</h3><br>
-		i made the thing`
+		-i made the thing`
 
 let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
 

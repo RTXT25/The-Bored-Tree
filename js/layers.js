@@ -108,6 +108,7 @@ addLayer("b", {
             cost : new Decimal(20)
         },
     },
+    branches:['h','d']
 })
 addLayer("h", {
     name: "Hypixel", // This is optional, only used in a few places, If absent it just uses the layer id.
@@ -133,6 +134,7 @@ addLayer("h", {
     },
     row: "1", // Row the layer is in on the tree (0 is the first row)
     layerShown(){return true},
+    branches: ['p','t']
 })
 addLayer("d", {
     name: "Drawing", // This is optional, only used in a few places, If absent it just uses the layer id.
@@ -158,6 +160,7 @@ addLayer("d", {
     },
     row: "1", // Row the layer is in on the tree (0 is the first row)
     layerShown(){return true},
+    branches: ['g','s']
 })
 addLayer("p", {
     name: "Pokemon", // This is optional, only used in a few places, If absent it just uses the layer id.
@@ -183,6 +186,7 @@ addLayer("p", {
     },
     row: "2", // Row the layer is in on the tree (0 is the first row)
     layerShown(){return true},
+    branches: ['a']
 })
 addLayer("t", {
     name: "Tik Tok", // This is optional, only used in a few places, If absent it just uses the layer id.
@@ -208,6 +212,7 @@ addLayer("t", {
     },
     row: "2", // Row the layer is in on the tree (0 is the first row)
     layerShown(){return true},
+    branches: ['yt']
 })
 addLayer("g", {
     name: "Touching Grass", // This is optional, only used in a few places, If absent it just uses the layer id.
@@ -233,6 +238,7 @@ addLayer("g", {
     },
     row: "2", // Row the layer is in on the tree (0 is the first row)
     layerShown(){return true},
+    branches: ['c']
 })
 addLayer("s", {
     name: "Survival", // This is optional, only used in a few places, If absent it just uses the layer id.
@@ -258,6 +264,7 @@ addLayer("s", {
     },
     row: "2", // Row the layer is in on the tree (0 is the first row)
     layerShown(){return true},
+    branches: ['e']
 })
 addLayer("a", {
     name: "Anime", // This is optional, only used in a few places, If absent it just uses the layer id.
@@ -283,6 +290,7 @@ addLayer("a", {
     },
     row: "3", // Row the layer is in on the tree (0 is the first row)
     layerShown(){return true},
+    branches: ['m']
 })
 addLayer("yt", {
     name: "YouTube", // This is optional, only used in a few places, If absent it just uses the layer id.
@@ -308,6 +316,7 @@ addLayer("yt", {
     },
     row: "3", // Row the layer is in on the tree (0 is the first row)
     layerShown(){return true},
+    branches: ['m']
 })
 addLayer("c", {
     name: "Cooking", // This is optional, only used in a few places, If absent it just uses the layer id.
@@ -333,6 +342,7 @@ addLayer("c", {
     },
     row: "3", // Row the layer is in on the tree (0 is the first row)
     layerShown(){return true},
+    branches: ['u']
 })
 addLayer("e", {
     name: "The End", // This is optional, only used in a few places, If absent it just uses the layer id.
@@ -358,6 +368,7 @@ addLayer("e", {
     },
     row: "3", // Row the layer is in on the tree (0 is the first row)
     layerShown(){return true},
+    branches: ['u']
 })
 addLayer("m", {
     name: "Memes", // This is optional, only used in a few places, If absent it just uses the layer id.
@@ -383,8 +394,9 @@ addLayer("m", {
     },
     row: "4", // Row the layer is in on the tree (0 is the first row)
     layerShown(){return true},
+    branches: ['co']
 })
-addLayer("U", {
+addLayer("u", {
     name: "Undertale", // This is optional, only used in a few places, If absent it just uses the layer id.
     symbol: "U", // This appears on the layer's node. Default is the id with the first letter capitalized
     position: "1", // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
@@ -408,6 +420,7 @@ addLayer("U", {
     },
     row: "4", // Row the layer is in on the tree (0 is the first row)
     layerShown(){return true},
+    branches: ['co']
 })
 addLayer("co", {
     name: "Codding", // This is optional, only used in a few places, If absent it just uses the layer id.
