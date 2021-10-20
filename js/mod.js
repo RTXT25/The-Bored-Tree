@@ -13,12 +13,15 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.4",
-	name: "BRANCHES!!!(can there be any thing lower than alpha)",
+	num: "0.5",
+	name: "world of colo(u)r (can there be any thing lower than alpha)",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
-	<h3>v0.4</h3><br>
+	<h3>v0.5 World of colo(u)r</3h><br>
+		-added colo(u)r
+	<br>	
+	<h3>v0.4 Branches!!!</h3><br>
 		-added branches
 	<br>
 	<h3>v0.3</h3><br>

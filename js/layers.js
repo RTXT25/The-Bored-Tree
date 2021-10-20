@@ -6,7 +6,7 @@ addLayer("l", {
         unlocked: true,
 		points: new Decimal(0),
     }},
-    color: "#4BDC13",
+    color: "#fff700",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "", // Name of prestige currency
     baseResource: "", // Name of resource prestige is based on
@@ -37,7 +37,7 @@ addLayer("ac", {
         unlocked: true,
 		points: new Decimal(0),
     }},
-    color: "#4BDC13",
+    color: "#fff700",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "", // Name of prestige currency
     baseResource: "", // Name of resource prestige is based on
@@ -62,7 +62,7 @@ addLayer("b", {
         unlocked: true,
 		points: new Decimal(0),
     }},
-    color: "#4BDC13",
+    color: "#b5b5b5",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "Boredom", // Name of prestige currency
     baseResource: "points", // Name of resource prestige is based on
@@ -118,7 +118,7 @@ addLayer("h", {
         unlocked: true,
 		points: new Decimal(0),
     }},
-    color: "#4BDC13",
+    color: "#a11800",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "", // Name of prestige currency
     baseResource: "", // Name of resource prestige is based on
@@ -144,7 +144,7 @@ addLayer("d", {
         unlocked: true,
 		points: new Decimal(0),
     }},
-    color: "#4BDC13",
+    color: "#ffffff",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "", // Name of prestige currency
     baseResource: "", // Name of resource prestige is based on
@@ -170,7 +170,7 @@ addLayer("p", {
         unlocked: true,
 		points: new Decimal(0),
     }},
-    color: "#4BDC13",
+    color: "#3887ab",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "", // Name of prestige currency
     baseResource: "", // Name of resource prestige is based on
@@ -196,7 +196,7 @@ addLayer("t", {
         unlocked: true,
 		points: new Decimal(0),
     }},
-    color: "#4BDC13",
+    color: "#e019c9",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "", // Name of prestige currency
     baseResource: "", // Name of resource prestige is based on
@@ -222,7 +222,7 @@ addLayer("g", {
         unlocked: true,
 		points: new Decimal(0),
     }},
-    color: "#4BDC13",
+    color: "#178538",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "", // Name of prestige currency
     baseResource: "", // Name of resource prestige is based on
@@ -248,7 +248,7 @@ addLayer("s", {
         unlocked: true,
 		points: new Decimal(0),
     }},
-    color: "#4BDC13",
+    color: "#633b0f",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "", // Name of prestige currency
     baseResource: "", // Name of resource prestige is based on
@@ -274,7 +274,7 @@ addLayer("a", {
         unlocked: true,
 		points: new Decimal(0),
     }},
-    color: "#4BDC13",
+    color: "#ffa600",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "", // Name of prestige currency
     baseResource: "", // Name of resource prestige is based on
@@ -300,7 +300,7 @@ addLayer("yt", {
         unlocked: true,
 		points: new Decimal(0),
     }},
-    color: "#4BDC13",
+    color: "#ff0000",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "", // Name of prestige currency
     baseResource: "", // Name of resource prestige is based on
@@ -326,7 +326,7 @@ addLayer("c", {
         unlocked: true,
 		points: new Decimal(0),
     }},
-    color: "#4BDC13",
+    color: "#ffce52",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "", // Name of prestige currency
     baseResource: "", // Name of resource prestige is based on
@@ -352,7 +352,7 @@ addLayer("e", {
         unlocked: true,
 		points: new Decimal(0),
     }},
-    color: "#4BDC13",
+    color: "#f5d993",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "", // Name of prestige currency
     baseResource: "", // Name of resource prestige is based on
@@ -378,7 +378,7 @@ addLayer("m", {
         unlocked: true,
 		points: new Decimal(0),
     }},
-    color: "#4BDC13",
+    color: "#8378fa",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "", // Name of prestige currency
     baseResource: "", // Name of resource prestige is based on
@@ -404,7 +404,7 @@ addLayer("u", {
         unlocked: true,
 		points: new Decimal(0),
     }},
-    color: "#4BDC13",
+    color: "#96008f",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "", // Name of prestige currency
     baseResource: "", // Name of resource prestige is based on
@@ -430,7 +430,7 @@ addLayer("co", {
         unlocked: true,
 		points: new Decimal(0),
     }},
-    color: "#4BDC13",
+    color: "#212121",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "", // Name of prestige currency
     baseResource: "", // Name of resource prestige is based on
@@ -455,7 +455,7 @@ addLayer("b2", {
         unlocked: true,
 		points: new Decimal(0),
     }},
-    color: "#4BDC13",
+    color: "#b5b5b5",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "", // Name of prestige currency
     baseResource: "", // Name of resource prestige is based on
