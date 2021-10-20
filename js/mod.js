@@ -18,8 +18,11 @@ let VERSION = {
 }
 
 let changelog = `<h1>Changelog:</h1><br>
-	<h3>0.2</h3><br>
-	added stuff
+	<h3>v0.3</h3><br>
+	added all the nodes
+	<br>
+	<h3>v0.2</h3><br>
+	added 4 boredom upgrades
 	<br>
 	<h3>v0.1</h3><br>
 		i made the thing`
