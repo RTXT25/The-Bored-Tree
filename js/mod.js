@@ -18,6 +18,9 @@ let VERSION = {
 }
 
 let changelog = `<h1>Changelog:</h1><br>
+	<h3>V0.9 Unlocked</h3><br>
+		-You can't skip upgrades (unless they are optional but you might still want them) now
+	<br>
 	<h3>V0.8 Accended</h3><br>
 		-added Acending layer<br>
 		-need to figure out how to make it in infoboxes though
@@ -43,7 +46,7 @@ let changelog = `<h1>Changelog:</h1><br>
 	<h3>v0.1</h3><br>
 		-i made the thing`
 
-let winText = `Woo you did it you finnished the bored tree. (you prob just pressed this cuz i havent yet added unlocking stuff) if you are still bored then press play again if not uhh see my other stuff <a href="/">here<a>`
+let winText = `Woo you did it you finnished the bored tree. (you prob just pressed this cuz i havent yet added unlocking stuff) <br>if you are still bored then press play again if not uhh see my other stuff <a href="/">here<a>`
 
 // If you add new functions anywhere inside of a layer, and those functions have an effect when called, add them here.
 // (The ones here are examples, all official functions are already taken care of)
@@ -81,7 +84,7 @@ function addedPlayerData() { return {
 }}
 
 // Display extra things at the top of the page
-var displayThings = [
+var displayThings = ["The game will tell you when you are done"
 ]
 
 // Determines when the game "ends"

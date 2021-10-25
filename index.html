@@ -43,7 +43,7 @@
 		<canvas id="treeCanvas" class="canvas" v-if="!(tmp.gameEnded && !player.keepGoing)"></canvas>
 
 		<div v-if="false" id="loadingSection" class="fullWidth">
-			<h1>Loading... (If this takes too long it means there was a serious error!)←</h1>
+			<h1>Loading... (If this takes too long it means that I broke something!)←</h1>
 		</div>
 		<div class="vl" v-if="player.navTab !== 'none' && tmp.other.splitScreen && player.tab!='none' && !(tmp.gameEnded && !player.keepGoing)"></div>
 		<div v-if="(tmp.gameEnded && !player.keepGoing)" class="fullWidth">
@@ -59,9 +59,10 @@
 			<span v-if="modInfo.discordLink"><a class="link" v-bind:href="modInfo.discordLink"
 					target="_blank">{{modInfo.discordName}}</a><br></span>
 			<a class="link" href="https://discord.gg/F3xveHV" target="_blank"
-				v-bind:style="modInfo.discordLink ? {'font-size': '16px'} : {}">The Modding Tree Discord</a><br>
-			<a class="link" href="http://discord.gg/wwQfgPa" target="_blank" v-bind:style="{'font-size': '16px'}">Main
-				Prestige Tree server</a><br>
+				v-bind:style="modInfo.discordLink ? {'font-size': '16px'} : {}">The Modding Tree Discord Server</a><br>
+			<a class="link" href="http://discord.gg/wwQfgPa" target="_blank" v-bind:style="{'font-size': '16px'}">The Prestige Tree Discord server</a><br>
+			<a class="link" href="https://RTXT25.github.io" target="_blank"
+				v-bind:style="modInfo.discordLink ? {'font-size': '16px'} : {}">I don't have a discord but my website is here</a><br>
 		</div>
 
 		<div id="treeOverlay" v-if="!(tmp.gameEnded && !player.keepGoing) && (player.tab === 'none' || tmp.other.splitScreen || !readData(layoutInfo.showTree))" class="treeOverlay" onscroll="resizeCanvas()"
@@ -88,6 +89,8 @@
 							Discord</a><br></li>
 					<li><a class="link" href="http://discord.gg/wwQfgPa" target="_blank"
 							v-bind:style="{'font-size': '16px'}">Main Prestige Tree server</a></li>
+						<a class="link" href="https://RTXT25.github.io" target="_blank"
+							v-bind:style="modInfo.discordLink ? {'font-size': '16px'} : {}">I don't have a discord but my website is here</a><br>
 				</ul>
 			</div>
 			<overlay-head v-if="!(tmp.gameEnded && !player.keepGoing)"></overlay-head>

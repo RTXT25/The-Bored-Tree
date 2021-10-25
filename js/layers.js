@@ -8,7 +8,7 @@ addLayer("ac", {
     }},
     color: "#fff700",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
-    resource: "", // Name of prestige currency
+    resource: "Achivements cuz there are none", // Name of prestige currency
     baseResource: "", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "none", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
@@ -22,6 +22,12 @@ addLayer("ac", {
     },
     row: "side", // Row the layer is in on the tree (0 is the first row)
     layerShown(){return true},
+    infoboxes: {
+        nothing:{
+            title: "<h1>THERE ARE NO ACHIVEMENTS YET</h1>",
+            body() {return "<h2>Read the title</h2>"}
+        },
+    },
 })
 addLayer("b", {
     name: "bored", // This is optional, only used in a few places, If absent it just uses the layer id.
@@ -41,7 +47,7 @@ addLayer("b", {
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
 
-        if (hasUpgrade('b', 23)) mult = mult.times(player[this.layer].points+1)
+        if (hasUpgrade('b', 23)) mult = mult.times(upgradeEffect('b',23))
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -68,51 +74,106 @@ addLayer("b", {
             title : "the same upgrade",
             description : "the same upgrade as the last one how boring",
             cost: new Decimal(1),
+            unlocked() {
+                return hasUpgrade('b', 11)
+            },
         },
         13:{
             title : "stop giving me the same upgrade",
             description : "OK this costs more",
-            cost : new Decimal(5)
+            cost : new Decimal(5),
+            unlocked() {
+                return hasUpgrade('b', 12)
+            },
         },
         14:{
             title : "the last same upgrade",
             description : "the last one I promise",
-            cost : new Decimal(10)
+            cost : new Decimal(10),
+            unlocked() {
+                return hasUpgrade('b', 13)
+            },
         },
         15:{
             title : "I lied",
             description : "this is the last one",
-            cost : new Decimal(20)
+            cost : new Decimal(20),
+            unlocked() {
+                return hasUpgrade('b', 14)
+            },
         },
         16:{
             title : "multiply by 4x",
             description : "it is not the same",
-            cost : new Decimal(30)
+            cost : new Decimal(30),
+            unlocked() {
+                return hasUpgrade('b', 15)
+            },
         },
         17:{
             title : "be more bored",
             description : "double bored",
-            cost : new Decimal(40)
+            cost : new Decimal(40),
+            unlocked() {
+                return hasUpgrade('b', 16)
+            },
         },
         21:{
             title : "useless upgrade",
             description : "it does nothing",
-            cost : new Decimal(123456789)
+            cost : new Decimal(10),
+            unlocked() {
+                return hasUpgrade('b', 17)
+            },
         },
         22:{
             title : "nice",
             description : "boost by 69",
-            cost : new Decimal(69)
+            cost : new Decimal(69),
+            unlocked() {
+                return hasUpgrade('b', 17)
+            },
         },
         23:{
             title : "inflation",
             description : "boost Boredom by Boredom",
-            cost : new Decimal(100)
+            effect(){return player[this.layer].points.times(player[this.layer].points+1)},
+            cost : new Decimal(100),
+            unlocked() {
+                return hasUpgrade('b', 22)
+            },
         },
         24:{
             title :"inflation is to OP (DUH)",
             description : "just make it a 10x multiplier(not working)",
-            cost: new Decimal(1e100)
+            cost: new Decimal(1e100),
+            unlocked() {
+                return hasUpgrade('b', 23)
+            },
+        },
+        25:{
+            title: "the same upgrade returns",
+            description:"But is is very expensive",
+            cost: new Decimal(100),
+            unlocked() {
+                return hasUpgrade('b', 24)
+            },
+        },
+        31:{
+            title: "High",
+            description : "I am bored with this layer get a new one <br> Unlock Hypixel",
+            cost:new Decimal(200),
+            unlocked() {
+                return hasUpgrade('b', 25)
+            },
+        },
+        32:{
+            title : "Definition",
+            description : "I am bored with this layer get a new one <br> Unlock Drawing",
+            cost:new Decimal(200),
+            unlocked() {
+                return hasUpgrade('b', 25)
+            },
         },
     },
     branches:['h','d']
@@ -152,6 +213,7 @@ addLayer("h", {
         "Skywars": {
             content: [
                 "main-display",
+                ["infobox", "loreH"],
                 "blank",
                 "milestones",
                 "blank",
