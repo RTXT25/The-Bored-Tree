@@ -13,11 +13,15 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.7",
-	name: "The End (can there be any thing lower than alpha)",
+	num: "0.8",
+	name: "Accended (can there be any thing lower than alpha)",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
+	<h3>V0.8 Accended</h3><br>
+		-added Acending layer
+		-need to figure out how to make it in infoboxes though
+	<br>
 	<h3>v0.7 The End</h3><br>
 		-added the ability to complete the game
 	<br>
