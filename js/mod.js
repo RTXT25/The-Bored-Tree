@@ -19,7 +19,7 @@ let VERSION = {
 
 let changelog = `<h1>Changelog:</h1><br>
 	<h3>V0.8 Accended</h3><br>
-		-added Acending layer
+		-added Acending layer<br>
 		-need to figure out how to make it in infoboxes though
 	<br>
 	<h3>v0.7 The End</h3><br>
