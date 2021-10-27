@@ -13,11 +13,14 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.8",
-	name: "Accended (can there be any thing lower than alpha)",
+	num: "0.10",
+	name: "Perks Do Nothing (can there be any thing lower than alpha)",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
+	<h3>v0.10 Perks Do Nothing</h3><br>
+		-Added Perks to Hypixel (They do nothing yet)
+	<br>
 	<h3>V0.9 Unlocked</h3><br>
 		-You can't skip upgrades (unless they are optional but you might still want them) now
 	<br>

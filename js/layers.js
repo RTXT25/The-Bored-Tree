@@ -61,7 +61,7 @@ addLayer("b", {
     infoboxes : {
         loreB :{
             title: "The Begining",
-            body() { return "You are Bored <br> So you play a game with the word bored in the title" },
+            body() { return "You are Bored  So you play a game with the word bored in the title" },
         },
     },
     upgrades :{
@@ -161,7 +161,7 @@ addLayer("b", {
         },
         31:{
             title: "High",
-            description : "I am bored with this layer get a new one <br> Unlock Hypixel",
+            description : "I am bored with this layer get a new one Unlock Hypixel",
             cost:new Decimal(200),
             unlocked() {
                 return hasUpgrade('b', 25)
@@ -169,7 +169,7 @@ addLayer("b", {
         },
         32:{
             title : "Definition",
-            description : "I am bored with this layer get a new one <br> Unlock Drawing",
+            description : "I am bored with this layer get a new one Unlock Drawing",
             cost:new Decimal(200),
             unlocked() {
                 return hasUpgrade('b', 25)
@@ -206,7 +206,7 @@ addLayer("h", {
     infoboxes : {
         loreH :{
             title: "Hypixel",
-            body() { return "You are Bored <br> So you play some Minecraft on the Hypixel network" },
+            body() { return "You are Bored So you play some Minecraft on the Hypixel network" },
             },
     },  
     tabFormat: {
@@ -237,12 +237,81 @@ addLayer("h", {
         },
         69: {
             title : "this layer has not been implemented yet",
-            description : "also this upgrrades does nothing",
+            description : "also these upgrades do nothing",
         },
     },
     buyables:{
-        11 : {
-            title: "this layer has not been implemented"
+        11: {
+            title: "Ender Mastery"
+        },
+        12:{
+            title: "Instant Smelting"
+        },
+        13:{
+            title: "Mining Expertise"
+        },
+        14:{
+            title: "Resistance Boost"
+        },
+        15:{
+            title: "Knowledge"
+        },
+        16:{
+            title: "Nourishment"
+        },
+        17:{
+            title: "Bridger"
+        },
+        18:{
+            title: "Lucky Charm"
+        },
+        21:{
+            title: "Arrow Recovery"
+        },
+        22:{
+            title: "Blazing Arrows"
+        },
+        23:{
+            title: "Juggernaut"
+        },
+        24:{
+            title: "Speed Boost"
+        },
+        25:{
+            title: "Annoy-o-mite"
+        },
+        26:{
+            title: "Fat"
+        },
+        27:{
+            title: "Enviromental Expert"
+        },
+        31:{
+            title: "Marksmanship"
+        },
+        32:{
+            title: "Bullldozer"
+        },
+        33:{
+            title: "Revenge"
+        },
+        34:{
+            title: "Necromancer"
+        },
+        35:{
+            title: "Black Magic"
+        },
+        36:{
+            title: "Robbery"
+        },
+        37:{
+            title: "Frost"
+        },
+        38:{
+            title: "Barbarian"
+        },
+        69 : {
+            title: "this layer has not been fully implemented"
         },
     },
     
