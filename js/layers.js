@@ -175,6 +175,7 @@ addLayer("b", {
                 return hasUpgrade('b', 25)
             },
         },
+        69:{title : "test Upgrade remove when relase"},
     },
     branches:['h','d']
 })
@@ -186,8 +187,9 @@ addLayer("h", {
         unlocked: true,
 		points: new Decimal(1),
     }},
+    //layerShown(),
     color: "#a11800",
-    requires: new Decimal(10), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1), // Can be a function that takes requirement increases into account
     resource: "COINS", // Name of prestige currency
     baseResource: "", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
@@ -202,7 +204,7 @@ addLayer("h", {
         return new Decimal(1)
     },
     row: "1", // Row the layer is in on the tree (0 is the first row)
-    layerShown(){return true},
+    layerShown(){return false},
     infoboxes : {
         loreH :{
             title: "Hypixel",
@@ -242,76 +244,219 @@ addLayer("h", {
     },
     buyables:{
         11: {
-            title: "Ender Mastery"
+            title: "Ender Mastery",
+            cost(x) { return new Decimal(1).mul(x) },
+            canAfford() { return player[this.layer].points.gte(this.cost()) },
+            buy() {
+                player[this.layer].points = player[this.layer].points.sub(this.cost())
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
         },
         12:{
-            title: "Instant Smelting"
+            title: "Instant Smelting",
+            cost(x) { return new Decimal(1).mul(x) },
+            canAfford() { return player[this.layer].points.gte(this.cost()) },
+            buy() {
+                player[this.layer].points = player[this.layer].points.sub(this.cost())
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
         },
         13:{
-            title: "Mining Expertise"
+            title: "Mining Expertise",
+            cost(x) { return new Decimal(1).mul(x) },
+            canAfford() { return player[this.layer].points.gte(this.cost()) },
+            buy() {
+                player[this.layer].points = player[this.layer].points.sub(this.cost())
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
         },
         14:{
-            title: "Resistance Boost"
+            title: "Resistance Boost",
+            cost(x) { return new Decimal(1).mul(x) },
+            canAfford() { return player[this.layer].points.gte(this.cost()) },
+            buy() {
+                player[this.layer].points = player[this.layer].points.sub(this.cost())
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
         },
         15:{
-            title: "Knowledge"
+            title: "Knowledge",
+            cost(x) { return new Decimal(1).mul(x) },
+            canAfford() { return player[this.layer].points.gte(this.cost()) },
+            buy() {
+                player[this.layer].points = player[this.layer].points.sub(this.cost())
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
         },
         16:{
-            title: "Nourishment"
+            title: "Nourishment",            cost(x) { return new Decimal(1).mul(x) },
+            canAfford() { return player[this.layer].points.gte(this.cost()) },
+            buy() {
+                player[this.layer].points = player[this.layer].points.sub(this.cost())
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
         },
         17:{
-            title: "Bridger"
+            title: "Bridger",
+            cost(x) { return new Decimal(1).mul(x) },
+            canAfford() { return player[this.layer].points.gte(this.cost()) },
+            buy() {
+                player[this.layer].points = player[this.layer].points.sub(this.cost())
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
         },
         18:{
-            title: "Lucky Charm"
+            title: "Lucky Charm",
+            cost(x) { return new Decimal(1).mul(x) },
+            canAfford() { return player[this.layer].points.gte(this.cost()) },
+            buy() {
+                player[this.layer].points = player[this.layer].points.sub(this.cost())
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
         },
         21:{
-            title: "Arrow Recovery"
+            title: "Arrow Recovery",
+            cost(x) { return new Decimal(1).mul(x) },
+            canAfford() { return player[this.layer].points.gte(this.cost()) },
+            buy() {
+                player[this.layer].points = player[this.layer].points.sub(this.cost())
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
         },
         22:{
-            title: "Blazing Arrows"
+            title: "Blazing Arrows",
+            cost(x) { return new Decimal(1).mul(x) },
+            canAfford() { return player[this.layer].points.gte(this.cost()) },
+            buy() {
+                player[this.layer].points = player[this.layer].points.sub(this.cost())
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
         },
         23:{
-            title: "Juggernaut"
+            title: "Juggernaut",
+            cost(x) { return new Decimal(1).mul(x) },
+            canAfford() { return player[this.layer].points.gte(this.cost()) },
+            buy() {
+                player[this.layer].points = player[this.layer].points.sub(this.cost())
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
         },
         24:{
-            title: "Speed Boost"
+            title: "Speed Boost",
+            cost(x) { return new Decimal(1).mul(x) },
+            canAfford() { return player[this.layer].points.gte(this.cost()) },
+            buy() {
+                player[this.layer].points = player[this.layer].points.sub(this.cost())
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
         },
         25:{
-            title: "Annoy-o-mite"
+            title: "Annoy-o-mite",
+            cost(x) { return new Decimal(1).mul(x) },
+            canAfford() { return player[this.layer].points.gte(this.cost()) },
+            buy() {
+                player[this.layer].points = player[this.layer].points.sub(this.cost())
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
         },
         26:{
-            title: "Fat"
+            title: "Fat",
+            cost(x) { return new Decimal(1).mul(x) },
+            canAfford() { return player[this.layer].points.gte(this.cost()) },
+            buy() {
+                player[this.layer].points = player[this.layer].points.sub(this.cost())
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
         },
         27:{
-            title: "Enviromental Expert"
+            title: "Enviromental Expert",
+            cost(x) { return new Decimal(1).mul(x) },
+            canAfford() { return player[this.layer].points.gte(this.cost()) },
+            buy() {
+                player[this.layer].points = player[this.layer].points.sub(this.cost())
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
         },
         31:{
-            title: "Marksmanship"
+            title: "Marksmanship",
+            cost(x) { return new Decimal(1).mul(x) },
+            canAfford() { return player[this.layer].points.gte(this.cost()) },
+            buy() {
+                player[this.layer].points = player[this.layer].points.sub(this.cost())
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
         },
         32:{
-            title: "Bullldozer"
+            title: "Bullldozer",
+            cost(x) { return new Decimal(1).mul(x) },
+            canAfford() { return player[this.layer].points.gte(this.cost()) },
+            buy() {
+                player[this.layer].points = player[this.layer].points.sub(this.cost())
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
         },
         33:{
-            title: "Revenge"
+            title: "Revenge",
+            cost(x) { return new Decimal(1).mul(x) },
+            canAfford() { return player[this.layer].points.gte(this.cost()) },
+            buy() {
+                player[this.layer].points = player[this.layer].points.sub(this.cost())
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
         },
         34:{
-            title: "Necromancer"
+            title: "Necromancer",
+            cost(x) { return new Decimal(1).mul(x) },
+            canAfford() { return player[this.layer].points.gte(this.cost()) },
+            buy() {
+                player[this.layer].points = player[this.layer].points.sub(this.cost())
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
         },
         35:{
-            title: "Black Magic"
+            title: "Black Magic",
+            cost(x) { return new Decimal(1).mul(x) },
+            canAfford() { return player[this.layer].points.gte(this.cost()) },
+            buy() {
+                player[this.layer].points = player[this.layer].points.sub(this.cost())
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
         },
         36:{
-            title: "Robbery"
+            title: "Robbery",
+                        cost(x) { return new Decimal(1).mul(x) },
+            canAfford() { return player[this.layer].points.gte(this.cost()) },
+            buy() {
+                player[this.layer].points = player[this.layer].points.sub(this.cost())
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
         },
         37:{
-            title: "Frost"
+            title: "Frost",
+            cost(x) { return new Decimal(1).mul(x) },
+            canAfford() { return player[this.layer].points.gte(this.cost()) },
+            buy() {
+                player[this.layer].points = player[this.layer].points.sub(this.cost())
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
         },
         38:{
-            title: "Barbarian"
+            title: "Barbarian",
+            cost(x) { return new Decimal(1).mul(x) },
+            canAfford() { return player[this.layer].points.gte(this.cost()) },
+            buy() {
+                player[this.layer].points = player[this.layer].points.sub(this.cost())
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
         },
         69 : {
-            title: "this layer has not been fully implemented"
+            title: "this layer has not been fully implemented (You can waste your coins here)",
+            cost(x) { return new Decimal(1).mul(x) },
+            canAfford() { return player[this.layer].points.gte(this.cost()) },
+            buy() {
+                player[this.layer].points = player[this.layer].points.sub(this.cost())
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
         },
     },
     

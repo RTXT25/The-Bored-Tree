@@ -13,11 +13,14 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.10",
-	name: "Perks Do Nothing (can there be any thing lower than alpha)",
+	num: "0.11",
+	name: "Perks Take Your Money (can there be any thing lower than alpha)",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
+	<h3>v0.11 Perks Take Your Money</h3><br>
+		-Perks take your money nothing else
+	<br>
 	<h3>v0.10 Perks Do Nothing</h3><br>
 		-Added Perks to Hypixel (They do nothing yet)
 	<br>
@@ -49,7 +52,7 @@ let changelog = `<h1>Changelog:</h1><br>
 	<h3>v0.1</h3><br>
 		-i made the thing`
 
-let winText = `Woo you did it you finnished the bored tree. (you prob just pressed this cuz i havent yet added unlocking stuff) <br>if you are still bored then press play again if not uhh see my other stuff <a href="/">here<a>`
+let winText = `Woo you did it you finnished the bored tree. (you prob just pressed this cuz i havent yet added unlocking stuff) <br>if you are still bored then press play again if not uhh see my other stuff <br>Also special Thanks to the modding tree discord for beeing such a big help in the project <a href="/">here<a>`
 
 // If you add new functions anywhere inside of a layer, and those functions have an effect when called, add them here.
 // (The ones here are examples, all official functions are already taken care of)
@@ -79,6 +82,7 @@ function getPointGen() {
 		if (hasUpgrade('b',16)) gain = gain.times(2)
 		if (hasUpgrade('b',17)) gain = gain.times(2)
 		if (hasUpgrade('b',22)) gain = gain.times(69)
+		if (hasUpgrade('b',69)) gain = gain.times(1e100)
 	return gain
 }
 
