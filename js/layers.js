@@ -204,7 +204,7 @@ addLayer("h", {
         return new Decimal(1)
     },
     row: "1", // Row the layer is in on the tree (0 is the first row)
-    layerShown(){return false},
+    layerShown(){return true},
     infoboxes : {
         loreH :{
             title: "Hypixel",
@@ -239,7 +239,7 @@ addLayer("h", {
         },
         69: {
             title : "this layer has not been implemented yet",
-            description : "also these upgrades do nothing",
+            description : "also this upgrade does nothing",
         },
     },
     buyables:{
