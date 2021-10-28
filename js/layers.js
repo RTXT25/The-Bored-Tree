@@ -789,7 +789,7 @@ addLayer("as", {
 
     color: "#4BDC13",                       // The color for this layer, which affects many elements.
     resource: "",            // The name of this layer's main prestige resource.
-    row: 6,                                 // The row this layer is on (0 is the first row).
+    row: 7,                                 // The row this layer is on (0 is the first row).
 
     baseResource: "",                 // The name of the resource your prestige gain is based on.
     baseAmount() { return player.points },  // A function to return the current amount of baseResource.
@@ -811,45 +811,187 @@ addLayer("as", {
 
     upgrades: {
         11:{
-            title:"so you have done every thing but your still bored",
+            title:"Where am I",
         },
-        21:{
-            title:"Yes",
+        12:{
+            title:"Who are you",
+            unlocked() {
+                return hasUpgrade('as', 11)
+            },
         },
-        31:{
-            title:"Hmmm, there sitll is one more thing you haven't done",
+        13:{
+            title:"Why am I here",
+            unlocked() {
+                return hasUpgrade('as', 12)
+            },
         },
-        41:{
-            title:"really?"
+        14:{
+            title:"Wait I have done every thing but I'm still bored",
+            unlocked() {
+                return hasUpgrade('as', 13)
+            },
         },
-        51:{
-            title:"Yes, I can send you there"
+        15:{
+            title:"What is it",
+            unlocked() {
+                return hasUpgrade('as', 14)
+            },
         },
-        61:{
-            title:"so are you ready to accend"
+        16:{
+            title:"Ok and that means??????",
+            unlocked() {
+                return hasUpgrade('as', 15)
+            },
         },
-        71:{
-            title:"ACCEND",
-            description:"enter the new world",
-        }
+        17:{
+            title:"Go Where!?!?!?!?!?!?!???!?!?!?!",
+            unlocked() {
+                return hasUpgrade('as', 16)
+            },
+        },
+        18:{
+            title:"Ok!",
+            unlocked() {
+                return hasUpgrade('as', 17)
+            },
+        },
+        19:{
+            title:"No!",
+            unlocked() {
+                return hasUpgrade('as', 17)
+            },
+        },
         // Look in the upgrades docs to see what goes here!
     },
     infoboxes:{
-        part1:{
-            tile: "WOW",
-            body() {return "EPICWOW ACeNCDSSDSDASDFGBGHJGJBKNK"}
-
+        v1:{
+            title: " ",
+            body() {return "<h1>*You awake in a void of nothingness*</h1>"}
+        },
+        v2:{
+            title: " ",
+            body() {return "<h1>You are in the acendant plane</h1>"},
+            unlocked() {
+                return hasUpgrade('as', 11)
+            },
+        },
+        v3:{
+            title: " ",
+            body() {return "<h1>I am the mere care taker of this realm</h1>"},
+            unlocked() {
+                return hasUpgrade('as', 12)
+            },
+        },
+        v4:{
+            title: " ",
+            body() {return "<h1>You are here beacuse you have done all things</h1>"},
+            unlocked() {
+                return hasUpgrade('as', 13)
+            },
+        },
+        v5:{
+            title: " ",
+            body() {return "<h1>Quit whining there is still one more thing you have not done</h1>"},
+            unlocked() {
+                return hasUpgrade('as', 14)
+            },
+        },
+        v6:{
+            title: " ",
+            body() {return "<h1>Follow me</h1><br><h3>The Hall Has Been Unlocked"},
+            unlocked() {
+                return hasUpgrade('as', 15)
+            },
+        },
+        h1: {
+            title: " ",
+            body() {return "<h1>Welcome to the Hall<br>This is the place where people like you walk into the new world</h1>"},
+            unlocked() {
+                return hasUpgrade('as', 15)
+            },
+        },
+        h2: {
+            title: " ",
+            body() {return "<h1>Ok fine yeah I'll cut to the chase you gotta go...</h1>"},
+            unlocked() {
+                return hasUpgrade('as', 15)
+            },
+        },
+        h3: {
+            title: " ",
+            body() {return "<h1>Uhhhggggg. Go to the big door that says death and go through it</h1>"},
+            unlocked() {
+                return hasUpgrade('as', 15)
+            },
         },
     },
     tabFormat: {
-        "The End?": {
+        "???": {
             content: [
-                "upgrades",
+                ["infobox","v1"],
+                ["upgrade", 11],
+                ["infobox","v2"],
+                ["upgrade",12],
+                ["infobox","v3"],
+                ["upgrade", 13],
+                ["infobox","v4"],
+                ["upgrade",14],
+                ["infobox","v5"],
+                ["upgrade",15],
+                ["infobox","v6"],
             ],
- 
+
         },
+        "The Hall": {
+            content:[
+                ["infobox","h1"],
+                ["upgrade",16],
+                ["infobox","h2"],
+                ["upgrade",17],
+                ["infobox","h3"],
+                ["upgrade",18],
+                ["upgrade",19],
+            ],
+            unlocked() {
+                return hasUpgrade('as', 15)
+            },
+        },
+        
     },
 })
+addLayer("st", {
+    startData() { return {                  // startData is a function that returns default data for a layer. 
+        unlocked: true,                     // You can add more variables here to add them to your layer.
+        points: new Decimal(0),             // "points" is the internal name for the main resource of the layer.
+    }},
+
+    color: "#4BDC13",                       // The color for this layer, which affects many elements.
+    resource: "prestige points",            // The name of this layer's main prestige resource.
+    row: 7,                                 // The row this layer is on (0 is the first row).
+
+    baseResource: "points",                 // The name of the resource your prestige gain is based on.
+    baseAmount() { return player.points },  // A function to return the current amount of baseResource.
+
+    requires: new Decimal(10),              // The amount of the base needed to  gain 1 of the prestige currency.
+                                            // Also the amount required to unlock the layer.
+
+    type: "none",                         // Determines the formula used for calculating prestige currency.
+    exponent: 0.5,                          // "normal" prestige gain is (currency^exponent).
+
+    gainMult() {                            // Returns your multiplier to your gain of the prestige resource.
+        return new Decimal(1)               // Factor in any bonuses multiplying gain here.
+    },
+    gainExp() {                             // Returns the exponent to your gain of the prestige resource.
+        return new Decimal(1)
+    },
+
+    layerShown() { return true },          // Returns a bool for if this layer's node should be visible in the tree.
+
+    upgrades: {
+        // Look in the upgrades docs to see what goes here!
+    },
+})
+
 addLayer("b2", {
     name: "boredom2", // This is optional, only used in a few places, If absent it just uses the layer id.
     symbol: "B", // This appears on the layer's node. Default is the id with the first letter capitalized
@@ -863,7 +1005,7 @@ addLayer("b2", {
     resource: "Boredom", // Name of prestige currency
     baseResource: "Points", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
-    type: "none", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
+    type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 0.5, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
@@ -872,9 +1014,17 @@ addLayer("b2", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: "7", // Row the layer is in on the tree (0 is the first row)
+    row: "6", // Row the layer is in on the tree (0 is the first row)
     layerShown(){return true},
+    infoboxes : {
+        loreBw :{
+            title: "The Begining?",
+            body() { return "You are Bored  So you play a game with the word bored in the title" },
+        },
+    },
+    
     upgrades :{
+
         11:{
          title : "bored",
             description : "gain more points",
@@ -884,19 +1034,31 @@ addLayer("b2", {
             title : "the same upgrade",
             description : "the same upgrade as the last one how boring",
             cost: new Decimal(1),
+            unlocked() {
+                return hasUpgrade('b2', 11)
+            },
         },
         13:{
             title : "stop giving me the same upgrade",
             description : "OK this costs more",
-           cost : new Decimal(5)
+           cost : new Decimal(5),
+           unlocked() {
+            return hasUpgrade('b2', 12)
+        },
         },
         21:{
             title :"The End",
             description : "finish the game",
+            unlocked() {
+                return hasUpgrade('b2', 13)
+            },
         },
         31:{
             title: "show stuff",
             description : "show all previous layers",
+            unlocked() {
+                return hasUpgrade('b2', 21)
+            },
         },
     },
 })

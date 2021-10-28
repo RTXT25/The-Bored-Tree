@@ -13,11 +13,14 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.11",
-	name: "Perks Take Your Money (can there be any thing lower than alpha)",
+	num: "0.12",
+	name: "Accened partialy (can there be any thing lower than alpha)",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
+	<h3>v0.12 Accened partialy</h3><br>
+		-Part of acending lore done and added
+	<br>
 	<h3>v0.11 Perks Take Your Money</h3><br>
 		-Perks take your money nothing else
 	<br>
