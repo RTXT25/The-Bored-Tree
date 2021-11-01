@@ -997,7 +997,7 @@ addLayer("st", {
     }},
 
     color: "#4BDC13",                       // The color for this layer, which affects many elements.
-    resource: "prestige points",            // The name of this layer's main prestige resource.
+    resource: " ",            // The name of this layer's main prestige resource.
     row: 7,                                 // The row this layer is on (0 is the first row).
 
     baseResource: "points",                 // The name of the resource your prestige gain is based on.
@@ -1016,7 +1016,7 @@ addLayer("st", {
         return new Decimal(1)
     },
 
-    layerShown() { return true },          // Returns a bool for if this layer's node should be visible in the tree.
+    layerShown() { return false },          // Returns a bool for if this layer's node should be visible in the tree.
 
     upgrades: {
         // Look in the upgrades docs to see what goes here!
