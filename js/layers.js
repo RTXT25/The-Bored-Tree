@@ -861,12 +861,19 @@ addLayer("as", {
                 return hasUpgrade('as', 17)
             },
         },
+        20:{
+            title:"Enter The Portal",
+            description : "Leave every thing behind and enter the portal",
+            unlocked() {
+                return hasUpgrade('as', 18) || hasUpgrade('as',19)
+            },
+        },
         // Look in the upgrades docs to see what goes here!
     },
     infoboxes:{
         v1:{
             title: " ",
-            body() {return "<h1>*You awake in a void of nothingness*</h1>"}
+            body() {return "<h1><i>*You awake in a void of nothingness*</i></h1>"}
         },
         v2:{
             title: " ",
@@ -914,14 +921,28 @@ addLayer("as", {
             title: " ",
             body() {return "<h1>Ok fine yeah I'll cut to the chase you gotta go...</h1>"},
             unlocked() {
-                return hasUpgrade('as', 15)
+                return hasUpgrade('as', 16)
             },
         },
         h3: {
             title: " ",
             body() {return "<h1>Uhhhggggg. Go to the big door that says death and go through it</h1>"},
             unlocked() {
-                return hasUpgrade('as', 15)
+                return hasUpgrade('as', 17)
+            },
+        },
+        h4: {
+            title: " ",
+            body() {return "<h1>Ok I am joking here is the Portal</h1><br><h3>Portal has been unlocked</h3>"},
+            unlocked() {
+                return hasUpgrade('as', 18) || hasUpgrade('as',19)
+            },
+        },
+        p1: {
+            title: " ",
+            body() {return "<h1><i>The Portal glows and beckons you</i><br>Enter And be taken to the new world</h1>"},
+            unlocked() {
+                return hasUpgrade('as', 18) || hasUpgrade('as',19)
             },
         },
     },
@@ -951,9 +972,19 @@ addLayer("as", {
                 ["infobox","h3"],
                 ["upgrade",18],
                 ["upgrade",19],
+                ["infobox","h4"],
             ],
             unlocked() {
                 return hasUpgrade('as', 15)
+            },
+        },
+        "Portal": {
+            content:[
+                ["infobox","p1"],
+                ["upgrade",20],
+            ],
+            unlocked() {
+                return hasUpgrade('as', 18) || hasUpgrade('as',19)
             },
         },
         
