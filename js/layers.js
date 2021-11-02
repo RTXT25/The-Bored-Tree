@@ -8,7 +8,7 @@ addLayer("ac", {
     }},
     color: "#fff700",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
-    resource: "Achivements cuz there are none", // Name of prestige currency
+    resource: "Achivements Completed", // Name of prestige currency
     baseResource: "", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "none", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
@@ -23,9 +23,117 @@ addLayer("ac", {
     row: "side", // Row the layer is in on the tree (0 is the first row)
     layerShown(){return true},
     infoboxes: {
-        nothing:{
-            title: "<h1>THERE ARE NO ACHIVEMENTS YET</h1>",
-            body() {return "<h2>Read the title</h2>"}
+    },
+    achievements: {
+        11: {
+            name: "Bored",
+            done() {
+                return player.b.points.gte(1) // pre-0.21 players should be able to get it
+            },
+            tooltip: "Own 1 Boredom",
+            onComplete() {
+                player.ac.points = player.ac.points.add(1)
+            },
+        },
+        12: {
+            name: "Bored-er",
+            done() {
+                return player.b.points.gte(2) // pre-0.21 players should be able to get it
+            },
+            tooltip: "Own 2 Boredom",
+            onComplete() {
+                player.ac.points = player.ac.points.add(1)
+            },
+        },
+        13: {
+            name: "Bored-er-er",
+            done() {
+                return player.b.points.gte(3) 
+            },
+            tooltip: "Own 3 Boredom",
+            onComplete() {
+                player.ac.points = player.ac.points.add(1)
+            },
+        },
+        14:{
+            name: "Not The Same",
+            done() {
+                return  hasUpgrade('b',16)
+            },
+            tooltip: "Very Different",
+            onComplete() {
+                player.ac.points = player.ac.points.add(1)
+            },
+        },
+        15:{
+            name: "My Screen Can't Fit This In The Same Row",
+            done() {
+                return  hasUpgrade('b',17)
+            },
+            tooltip: "Play The Game",
+            onComplete() {
+                player.ac.points = player.ac.points.add(1)
+            },
+        },
+        16:{
+            name: "NICE",
+            done() {
+                return  hasUpgrade('b',22)
+            },
+            tooltip: "69 Nice",
+            onComplete() {
+                player.ac.points = player.ac.points.add(1)
+            },
+        },
+        21: {
+            name: "High In The Sky",
+            done() {
+                return player.h.points.gte(1) 
+            },
+            tooltip: "Own 1 Coin",
+            onComplete() {
+                player.ac.points = player.ac.points.add(1)
+            },
+        },
+        22: {
+            name: "The Definition Of Boredom",
+            done() {
+                return player.d.points.gte(1) 
+            },
+            tooltip: "Draw 1 Drawing",
+            onComplete() {
+                player.ac.points = player.ac.points.add(1)
+            },
+        },
+        23: {
+            name: "Television",
+            done() {
+                return player.h.points.gte(1) && player.d.points.gte(1)
+            },
+            tooltip: "Have both Second layers",
+            onComplete() {
+                player.ac.points = player.ac.points.add(1)
+            },
+        },
+        31:{
+            name: "Scribblin",
+            done() {
+                return hasMilestone('d',0)
+            },
+            tooltip: "Start Scriblin",
+            onComplete() {
+                player.ac.points = player.ac.points.add(1)
+            },
+        },
+        32:{
+            name: "Sticks",
+            done() {
+                return hasMilestone('d',1)
+            },
+            tooltip: "Draw Stick figures",
+            onComplete() {
+                player.ac.points = player.ac.points.add(1)
+            },
         },
     },
 })
@@ -185,7 +293,7 @@ addLayer("h", {
     position: "0", // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     startData() { return {
         unlocked: true,
-		points: new Decimal(1),
+		points: new Decimal(0),
     }},
     //layerShown(),
     color: "#a11800",
@@ -199,7 +307,6 @@ addLayer("h", {
         mult = new Decimal(1)
         return mult
     },
-    passiveGeneration() {return 2},
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
@@ -235,7 +342,22 @@ addLayer("h", {
         11: {
             title :"Gaming",
             description : "start earning COINS",
-            cost : new Decimal(1)
+            cost : new Decimal(0)
+        },
+        12: {
+            title :"Kits",
+            description : "learn that you can pick a kit",
+            cost: new Decimal(100),
+        },
+        13: {
+            title:"Not default",
+            description: "Buy a kit that is not default",
+            cost: new Decimal(250),
+        },
+        14: {
+            title:"Victory Royale",
+            description: "Win a Game Boosting Your ego",
+            cost: new Decimal(500),
         },
         69: {
             title : "this layer has not been implemented yet",
@@ -459,7 +581,13 @@ addLayer("h", {
             },
         },
     },
-    
+    update(diff) {
+        hgain = new Decimal(1)
+        if(hasUpgrade('h',14)) hgain = hgain.times(8)
+        if(hasUpgrade('h',13)) hgain = hgain.times(4)
+        if(hasUpgrade('h',12)) hgain = hgain.times(2)
+        if(hasUpgrade('h',11)) player[this.layer].points = player[this.layer].points.add(hgain)
+      },
     branches: ['p','t']
 })
 addLayer("d", {
@@ -472,7 +600,7 @@ addLayer("d", {
     }},
     color: "#ffffff",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
-    resource: "", // Name of prestige currency
+    resource: "Drawings", // Name of prestige currency
     baseResource: "", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "none", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
@@ -489,9 +617,91 @@ addLayer("d", {
     infoboxes : {
         loreD :{
             title: "Drawing",
-            body() { return "You are Bored <br> So you decide to draw stuff <br> not yet implemented" },
+            body() { return "You are Bored <br> So you decide to draw stuff <br> not yet fully implemented" },
             },
     },
+    upgrades:{
+        11:{
+            title: "A piece of paper",
+            description: "Draw on a piece of paper",
+        },
+        12: {
+            title: "Crayons",
+            description: "Wait how did you draw with only a piece of paper",
+            cost: new Decimal(250),
+            unlocked() {
+                return hasMilestone('d', 0)
+            },
+        },
+        13: {
+            title: "Oil pastels",
+            description: "What is the differnece between Oil pastels And Crayons",
+            cost: new Decimal(500),
+            unlocked() {
+                return hasMilestone('d', 0)
+            },
+        },
+        14: {
+            title: "Charcoal Pencil",
+            description: "Ok I get it you are not a toddler",
+            cost: new Decimal(750),
+            unlocked() {
+                return hasMilestone('d', 0)
+            },
+        },
+        16: {
+            title: "A pencil",
+            description: "yay a normal B8 Pencil",
+            unlocked() {
+                return hasMilestone('d', 1)
+            },
+        },
+        17: {
+            title: "A pencil again",
+            description: "yay a normal H8 Pencil",
+            unlocked() {
+                return hasMilestone('d', 1)
+            },
+        },
+        19: {
+            title: "A pencil again again",
+            description: "yay an actual normal HB Pencil",
+            unlocked() {
+                return hasMilestone('d', 1)
+            },
+        },
+    },
+    milestones: {
+        0: {
+            requirementDescription: "1 Drawing",
+            effectDescription: "Learn to Scrible",
+            done() {
+                return player.d.points.gte(1)
+            },
+        },
+        1: {
+            requirementDescription: "1000 Drawing",
+            effectDescription: "Learn to make Stick Figures",
+            done() {
+                return player.d.points.gte(1000)
+            },
+        },
+        2: {
+            requirementDescription: "100000000 Drawing",
+            effectDescription: "Learn to draw Lumpy Chibi Things",
+            done() {
+                return player.d.points.gte(100000000)
+            },
+        },
+    },        
+
+    update(diff) {
+        dgain = new Decimal(1)
+        if(hasUpgrade('d',14)) dgain = dgain.times(6)
+        if(hasUpgrade('d',13)) dgain = dgain.times(4)
+        if(hasUpgrade('d',12)) dgain = dgain.times(2)
+        if(hasUpgrade('d',11)) player[this.layer].points = player[this.layer].points.add(dgain)
+      },
     branches: ['g','s']
 })
 addLayer("p", {

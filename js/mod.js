@@ -13,16 +13,20 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.13",
-	name: "Accened (can there be any thing lower than alpha)",
+	num: "0.14",
+	name: "slightly more gameplay (can there be any thing lower than alpha)",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
+	<h3>v0.14 slightly more game play</h3><br>
+	-Added More Actual Gameplay I know Shoking 
+	<br>
 	<h3>v0.13 Accened</h3><br>
 		-acending lore done 
 	<br>
 	<h3>v0.12 Accened partialy</h3><br>
 		-Part of acending lore done and added
+		-I figured out infoboxes
 	<br>
 	<h3>v0.11 Perks Take Your Money</h3><br>
 		-Perks take your money nothing else
