@@ -1022,7 +1022,6 @@ addLayer("st", {
         // Look in the upgrades docs to see what goes here!
     },
 })
-
 addLayer("b2", {
     name: "boredom2", // This is optional, only used in a few places, If absent it just uses the layer id.
     symbol: "B", // This appears on the layer's node. Default is the id with the first letter capitalized
