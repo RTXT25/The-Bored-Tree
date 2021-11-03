@@ -959,7 +959,8 @@ addLayer("d", {
         "Drawing": {
             content: [
                 "main-display",
-                "upgrades"
+                "upgrades",
+                "milestones",
             ],
  
         },

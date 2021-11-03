@@ -13,11 +13,14 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.15",
+	num: "0.15.1",
 	name: "Kit-ten LOL (can there be any thing lower than alpha)",
 }
 
 let changelog = `<h1>Changelog:</h1><br><br>
+	<h3>v0.15.1 Kit-ten LOL</h3><br>
+	-Fixed the Drawing Mlilstones
+	<br>
 	<h3>v0.15 Kit-ten LOL</h3><br>
 	-Added All The Kits<br>
 	-Added some achivements <br>
