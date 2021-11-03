@@ -135,6 +135,36 @@ addLayer("ac", {
                 player.ac.points = player.ac.points.add(1)
             },
         },
+        41:{
+            name: "Kitted UP",
+            done() {
+                return hasUpgrade('h',12)
+            },
+            tooltip: "Unlock Kits",
+            onComplete() {
+                player.ac.points = player.ac.points.add(1)
+            },
+        },
+        42:{
+            name: "Perky",
+            done() {
+                return hasUpgrade('h',14)
+            },
+            tooltip: "What do you think (Unlock Perks)",
+            onComplete() {
+                player.ac.points = player.ac.points.add(1)
+            },
+        },
+        43:{
+            name: "Yeah Fortnite we bout get down get down",
+            done() {
+                return hasUpgrade('h',14)
+            },
+            tooltip: "Gain a Victory Royale a.k.a. Win One game",
+            onComplete() {
+                player.ac.points = player.ac.points.add(1)
+            },
+        },
     },
 })
 addLayer("b", {
@@ -317,24 +347,50 @@ addLayer("h", {
             title: "Hypixel",
             body() { return "You are Bored So you play some Minecraft on the Hypixel network" },
             },
-    },  
+        loreK :{
+            title: "Kits",
+            body() { return "Kits exist they also do nothing YET" },
+            },
+        loreP :{
+            title: "Perks",
+            body() { return "We steal ur money" },
+            },
+    },
     tabFormat: {
         "Skywars": {
             content: [
                 "main-display",
                 ["infobox", "loreH"],
                 "blank",
-                "milestones",
-                "blank",
-                "blank",
-                "upgrades"
+                ["row", [["upgrade", 11],["upgrade", 12],["upgrade", 13],["upgrade", 14],["upgrade", 15],["upgrade", 16]],],
+                ["row", [["upgrade", 21],],],
             ],
  
         },
+        "Kits" :{
+            content: [
+                "main-display",
+                ["infobox","loreK"],
+                ["row", [["upgrade", 99],["upgrade", 98],["upgrade", 97],["upgrade", 96],["upgrade", 95],["upgrade", 94]],],
+                ["row", [["upgrade", 93],["upgrade", 92],["upgrade", 91],["upgrade", 89],["upgrade", 88],["upgrade", 87]],],
+                ["row", [["upgrade", 86],["upgrade", 85],["upgrade", 84],["upgrade", 83],["upgrade", 82],["upgrade", 81]],],
+                ["row", [["upgrade", 79],["upgrade", 78],["upgrade", 77],["upgrade", 76],["upgrade", 75],["upgrade", 74]],],
+                ["row", [["upgrade", 73],["upgrade", 72],["upgrade", 71],["upgrade", 69],["upgrade", 68],["upgrade", 67]],],
+                ["row", [["upgrade", 66],["upgrade", 65],["upgrade", 64],["upgrade", 63],["upgrade", 62],],],
+            ],
+            unlocked() {
+                return hasUpgrade('h', 12)
+            },
+        },
         "Perks": {
             content: [
-                "buyables"
+                "main-display",
+                ["infobox","loreP"],
+                "buyables",
             ],
+            unlocked() {
+                return hasUpgrade('h', 14)
+            },
  
         },
     },
@@ -342,26 +398,207 @@ addLayer("h", {
         11: {
             title :"Gaming",
             description : "start earning COINS",
-            cost : new Decimal(0)
+            cost : new Decimal(0),
         },
         12: {
             title :"Kits",
             description : "learn that you can pick a kit",
             cost: new Decimal(100),
+            unlocked() {
+                return hasUpgrade('h', 11)
+            },
         },
         13: {
-            title:"Not default",
-            description: "Buy a kit that is not default",
-            cost: new Decimal(250),
-        },
-        14: {
-            title:"Victory Royale",
-            description: "Win a Game Boosting Your ego",
+            title:"Murder",
+            description: "Get a Lucky Ambush Void Kill Boosting your ego",
             cost: new Decimal(500),
+            unlocked() {
+                return hasUpgrade('h', 12)
+            },
         },
-        69: {
-            title : "this layer has not been implemented yet",
-            description : "also this upgrade does nothing",
+        14:{
+            title: "Perks",
+            description: "Learn that Perks exsist",
+            cost: new Decimal(750),
+            unlocked() {
+                return hasUpgrade('h', 13)
+            },
+        },
+        15:{
+            title: "Another one bite the dust",
+            description: "Murder But again",
+            cost: new Decimal(1000),
+            unlocked() {
+                return hasUpgrade('h', 14)
+            },
+        },
+        16:{
+            title: "Victory Royale",
+            description: "You win because every one left the game",
+            cost: new Decimal(2000),
+            unlocked() {
+                return hasUpgrade('h', 15)
+            },
+        },
+        21:{
+            title: "Murder 2",
+            description: "you get 2 kills in a game boosing your ego but murder times 2",
+            cost: new Decimal(2000),
+            unlocked() {
+                return hasUpgrade('h', 16)
+            },
+        },
+        99:{
+            title: "Armoursmith",
+            cost: new Decimal(15000),
+        },
+        98:{
+            title: "Ecologist",
+            cost: new Decimal(15000),
+        },
+        97:{
+            title: "Enchanter",
+            cost: new Decimal(15000),
+        },
+        96:{
+            title: "Rookie",
+            cost: new Decimal(15000),
+        },
+        95:{
+            title: "Batguy",
+            cost: new Decimal(15000),
+        },
+        94:{
+            title: "Disco",
+            cost: new Decimal(15000),
+        },
+        93:{
+            title: "Energix",
+            cost: new Decimal(15000),
+        },
+        92:{
+            title: "Frog",
+            cost: new Decimal(15000),
+        },
+        91:{
+            title: "Grenade",
+            cost: new Decimal(15000),
+        },
+        89:{
+            title: "Healer",
+            cost: new Decimal(15000),
+        },
+        88:{
+            title: "Scout",
+            cost: new Decimal(15000),
+        },
+        87:{
+            title: "Cactus",
+            cost: new Decimal(15000),
+        },
+        87:{
+            title: "Armourer",
+            cost: new Decimal(20000),
+        },
+        86:{
+            title: "Baseball Player",
+            cost: new Decimal(20000),
+        },
+        85:{
+            title: "Enderchest",
+            cost: new Decimal(20000),
+        },
+        84:{
+            title: "Farmer",
+            cost: new Decimal(20000),
+        },
+        83:{
+            title: "Fisherman",
+            cost: new Decimal(20000),
+        },
+        82:{
+            title: "Hunter",
+            cost: new Decimal(20000),
+        },
+        81:{
+            title: "Knight",
+            cost: new Decimal(20000),
+        },
+        79:{
+            title: "Pharaoh",
+            cost: new Decimal(20000),
+        },
+        78:{
+            title: "Snowman",
+            cost: new Decimal(20000),
+        },
+        77:{
+            title: "Speleologist",
+            cost: new Decimal(20000),
+        },
+        76:{
+            title: "Princess",
+            cost: new Decimal(20000),
+        },
+        75:{
+            title: "Engineer",
+            cost: new Decimal(20000),
+        },
+        74:{
+            title: "Pig Rider",
+            cost: new Decimal(20000),
+        },
+        73:{
+            title: "Sloth",
+            cost: new Decimal(20000),
+        },
+        72:{
+            title: "Magician",
+            cost: new Decimal(20000),
+        },
+        71:{
+            title: "Warlock",
+            cost: new Decimal(20000),
+        },
+        69:{
+            title: "Cannoneer",
+            cost: new Decimal(30000),
+        },
+        68:{
+            title: "Enderman",
+            cost: new Decimal(30000),
+        },
+        67:{
+            title: "Pyro",
+            cost: new Decimal(30000),
+        },
+        68:{
+            title: "Troll",
+            cost: new Decimal(30000),
+        },
+        67:{
+            title: "Guardian",
+            cost: new Decimal(30000),
+        },
+        66:{
+            title: "Salmon",
+            cost: new Decimal(30000),
+        },
+        65:{
+            title: "Slime",
+            cost: new Decimal(30000),
+        },
+        64:{
+            title: "Jester",
+            cost: new Decimal(30000),
+        },
+        63:{
+            title: "Zookeeper",
+            cost: new Decimal(30000),
+        },
+        62:{
+            title: "Archeologist",
+            cost: new Decimal(30000),
         },
     },
     buyables:{
@@ -583,7 +820,9 @@ addLayer("h", {
     },
     update(diff) {
         hgain = new Decimal(1)
-        if(hasUpgrade('h',14)) hgain = hgain.times(8)
+        if(hasUpgrade('h',17)) hgain = hgain.times(8)
+        if(hasUpgrade('h',16)) hgain = hgain.times(2)
+        if(hasUpgrade('h',15)) hgain = hgain.times(4)
         if(hasUpgrade('h',13)) hgain = hgain.times(4)
         if(hasUpgrade('h',12)) hgain = hgain.times(2)
         if(hasUpgrade('h',11)) player[this.layer].points = player[this.layer].points.add(hgain)
@@ -618,6 +857,14 @@ addLayer("d", {
         loreD :{
             title: "Drawing",
             body() { return "You are Bored <br> So you decide to draw stuff <br> not yet fully implemented" },
+            },
+        loreC :{
+            title: "Classes",
+            body() { return "Do Class Get Mad SkillZ" },
+            },
+        loreCo :{
+            title: "Contest",
+            body() { return "Dem tests of skill" },
             },
     },
     upgrades:{
@@ -687,13 +934,19 @@ addLayer("d", {
             },
         },
         2: {
-            requirementDescription: "100000000 Drawing",
-            effectDescription: "Learn to draw Lumpy Chibi Things",
+            requirementDescription: "1000000 Drawing",
+            effectDescription: "Learn to draw Lumpy Chibi Things and realise that you suck so you get Classes",
             done() {
-                return player.d.points.gte(100000000)
+                return player.d.points.gte(1000000)
             },
         },
-    },        
+    },
+    buyables:{
+        11:{
+            title:"drawing faces",
+            description:"Go to classes to learn to draw faces"
+        },
+    },
 
     update(diff) {
         dgain = new Decimal(1)
@@ -702,6 +955,28 @@ addLayer("d", {
         if(hasUpgrade('d',12)) dgain = dgain.times(2)
         if(hasUpgrade('d',11)) player[this.layer].points = player[this.layer].points.add(dgain)
       },
+      tabFormat: {
+        "Drawing": {
+            content: [
+                "main-display",
+                "upgrades"
+            ],
+ 
+        },
+        "Classes" :{
+            content: [
+                "main-display",
+                ["infobox","loreC"],
+                "buyables",
+            ],
+        },
+        "Contest" :{
+            content: [
+                "main-display",
+                ["infobox","loreCo"]
+            ],
+        },
+    },
     branches: ['g','s']
 })
 addLayer("p", {

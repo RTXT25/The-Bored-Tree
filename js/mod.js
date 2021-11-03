@@ -13,51 +13,71 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.14",
-	name: "slightly more gameplay (can there be any thing lower than alpha)",
+	num: "0.15",
+	name: "Kit-ten LOL (can there be any thing lower than alpha)",
 }
 
-let changelog = `<h1>Changelog:</h1><br>
-	<h3>v0.14 slightly more game play</h3><br>
-	-Added More Actual Gameplay I know Shoking 
+let changelog = `<h1>Changelog:</h1><br><br>
+	<h3>v0.15 Kit-ten LOL</h3><br>
+	-Added All The Kits<br>
+	-Added some achivements <br>
+	-Messed up the drawing milestones<br>
+	-neatened the change log
+	<br>
+	<br>
+	<h3>v0.14 Acheving Stuff play</h3><br>
+	-Added More Actual Gameplay I know Shocking 
+	-Also Achivements
 	<br>
 	<h3>v0.13 Accened</h3><br>
 		-acending lore done 
+	<br>
 	<br>
 	<h3>v0.12 Accened partialy</h3><br>
 		-Part of acending lore done and added
 		-I figured out infoboxes
 	<br>
+	<br>
 	<h3>v0.11 Perks Take Your Money</h3><br>
 		-Perks take your money nothing else
+	<br>
 	<br>
 	<h3>v0.10 Perks Do Nothing</h3><br>
 		-Added Perks to Hypixel (They do nothing yet)
 	<br>
+	<br>
 	<h3>V0.9 Unlocked</h3><br>
 		-You can't skip upgrades (unless they are optional but you might still want them) now
+	<br>
 	<br>
 	<h3>V0.8 Accended</h3><br>
 		-added Acending layer<br>
 		-need to figure out how to make it in infoboxes though
 	<br>
+	<br>
 	<h3>v0.7 The End</h3><br>
 		-added the ability to complete the game
 	<br>
+	<br>
 	<h3>v0.6 Inflation Complete</h3><br>
 		-added lots more upgrades
+	<br>
 	<br>	
 	<h3>v0.5 World of colo(u)r</3h><br>
 		-added colo(u)r
-	<br>	
+	<br>
+	<br>
 	<h3>v0.4 Branches!!!</h3><br>
 		-added branches
+	<br>
 	<br>
 	<h3>v0.3</h3><br>
 		-added all the layers
 	<br>
+	<br>
 	<h3>v0.2</h3><br>
 		-added 4 boredom upgrades
+	<br>
 	<br>
 	<h3>v0.1</h3><br>
 		-i made the thing`
