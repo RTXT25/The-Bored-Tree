@@ -28,7 +28,7 @@ let changelog = `<h1>Changelog:</h1><br><br>
 	-neatened the change log
 	<br>
 	<br>
-	<h3>v0.14 Acheving Stuff play</h3><br>
+	<h3>v0.14 Achieving Stuff play</h3><br>
 	-Added More Actual Gameplay I know Shocking 
 	-Also Achivements
 	<br>
