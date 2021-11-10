@@ -823,8 +823,10 @@ addLayer("h", {
         if(hasUpgrade('h',17)) hgain = hgain.times(8)
         if(hasUpgrade('h',16)) hgain = hgain.times(2)
         if(hasUpgrade('h',15)) hgain = hgain.times(4)
+        if(hasUpgrade('h',14)) hgain = hgain.times(4)
         if(hasUpgrade('h',13)) hgain = hgain.times(4)
         if(hasUpgrade('h',12)) hgain = hgain.times(2)
+
         if(hasUpgrade('h',11)) player[this.layer].points = player[this.layer].points.add(hgain)
       },
     branches: ['p','t']
@@ -947,18 +949,36 @@ addLayer("d", {
             description:"Go to classes to learn to draw faces"
         },
     },
+    challenges: {
+        11: {
+            name: "Modern Art",
+            challengeDescription: "You are bad at drawing so you can make very good? modern art<br>Drawing gain halfed",           
+            canComplete: function() {return player[this.layer].points.gte(10000)},
+            goalDescription: "10000 points",
+            onStart() { 
+                player[this.layer].points.times(0)
+            },
+        },
+    },
 
     update(diff) {
         dgain = new Decimal(1)
+
         if(hasUpgrade('d',14)) dgain = dgain.times(6)
         if(hasUpgrade('d',13)) dgain = dgain.times(4)
         if(hasUpgrade('d',12)) dgain = dgain.times(2)
+
+        if(hasChallenge('d', 11)) dgain = dgain.times(2)
+
+        if(inChallenge('d',11)) dgain = dgain.times(0.5)
+
         if(hasUpgrade('d',11)) player[this.layer].points = player[this.layer].points.add(dgain)
       },
       tabFormat: {
         "Drawing": {
             content: [
                 "main-display",
+                ["infobox","loreD"],
                 "upgrades",
                 "milestones",
             ],
@@ -974,7 +994,8 @@ addLayer("d", {
         "Contest" :{
             content: [
                 "main-display",
-                ["infobox","loreCo"]
+                ["infobox","loreCo"],
+                "challenges",
             ],
         },
     },
